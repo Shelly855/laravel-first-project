@@ -11,6 +11,6 @@
 
     <!--Goes to the 'test' page-->
     <!--Curly braces are for php-->
-    <a href="{{ route('test') }}">Test</a>
+    <a href="{{ route('first') }}">Test</a>
 </body>
 </html>

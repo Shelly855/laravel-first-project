@@ -70,11 +70,18 @@ Route::prefix('admin')->group(function(){
 
     Route::get('/group-test', function(){
         return 'Hello Admin';
-    });
+    })->name('first');
+
+    // Shift + alt + down arrow to duplicate code below
+    Route::get('/group-test1', function(){
+        return 'Hello Admin1';
+    })->name('second');
 
 
 });
 
 Route::get('/group-test', function(){
     return 'Hello User';
-});
+})->name('first');
+
+Route::view('/first', 'first');
