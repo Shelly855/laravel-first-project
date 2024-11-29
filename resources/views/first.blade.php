@@ -9,8 +9,10 @@
 <body>
     <h1>This is our first laravel view</h1>
 
-    <!--Goes to the 'test' page-->
     <!--Curly braces are for php-->
-    <a href="{{ route('first') }}">Test</a>
+    <!--returns Route::get('/group-test', function(){
+        return 'Hello Admin';
+    })->name('first'); -->
+    <a href="{{ route('admin.first') }}">Test</a>
 </body>
 </html>

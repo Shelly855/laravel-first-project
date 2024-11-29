@@ -66,7 +66,8 @@ Route::middleware('first')->group(function(){
 */
 
 // For every route inside here, the prefix('admin') adds 'admin' in URL  e.g. admin/group-test
-Route::prefix('admin')->group(function(){
+// name('admin.') means that for each name, it'll add admin.  e.g. ->name('admin.first');
+Route::name('admin.')->prefix('admin')->group(function(){
 
     Route::get('/group-test', function(){
         return 'Hello Admin';
