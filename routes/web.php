@@ -13,5 +13,12 @@ use App\Http\Controllers\TestController;
 Route::get('/', [TestController::class, 'index']);
 
 // if URL isn't localhost:8000?token=verified
-Route::Get('/noaccess', [TestController::class, 'noaccess'])->name('noaccess');
+Route::get('/noaccess', [TestController::class, 'noaccess'])->name('noaccess');
+
+// ['names' => 'post'] = route name
+// Partial resource route
+// To create only show and create, replace 'except' with 'only'
+Route::resource('post', App\Http\Controllers\ResourceController::class, ['names' => 'post', 'except'
+
+=> ['show', 'create']]); // If we don't need these two (use except)
 
