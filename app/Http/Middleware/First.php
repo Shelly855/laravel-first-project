@@ -15,6 +15,10 @@ class First
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if($request->token == 'verified'){
+            return $next($request);
+        }
+
+        return redirect()->route('noaccess');
     }
 }
