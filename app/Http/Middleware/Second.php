@@ -6,21 +6,16 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class First
+class Second
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
-        // if($request->token == 'verified'){
-        //     return $next($request);
-        // }
-
-        // return redirect()->route('noaccess');
-
-        echo "I am route middleware";
+        echo "I am global middleware";
+        return $next($request);
     }
 }
