@@ -31,3 +31,50 @@ Route::get('/product/{id?}', function($id = 'all'){
         return $data[$id] ?? "The fruit is not in the basket";
     }
 });
+
+
+// GROUPING ROUTES FOR MIDDLEWARE
+/* So you don't need to keep repeating:
+
+    Route::get('/group-test', function(){
+
+        })->middleware('first');
+
+for every route */
+/*
+Route::middleware('first')->group(function(){
+    Route::get('/group-test', function(){
+
+    });
+
+    Route::get('/group-test2', function(){
+
+    });
+
+    Route::get('/group-test3', function(){
+
+    });
+
+    Route::get('/group-test4', function(){
+
+    });
+
+    Route::get('/group-test5', function(){
+
+    });
+});
+*/
+
+// For every route inside here, the prefix('admin') adds 'admin' in URL  e.g. admin/group-test
+Route::prefix('admin')->group(function(){
+
+    Route::get('/group-test', function(){
+        return 'Hello Admin';
+    });
+
+
+});
+
+Route::get('/group-test', function(){
+    return 'Hello User';
+});
