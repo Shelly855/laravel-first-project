@@ -7,12 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>This is our first laravel view</h1>
-
-    <!--Curly braces are for php-->
-    <!--returns Route::get('/group-test', function(){
-        return 'Hello Admin';
-    })->name('first'); -->
-    <a href="{{ route('admin.first') }}">Test</a>
+    <h1>My name is {{ $data }}</h1>
 </body>
 </html>

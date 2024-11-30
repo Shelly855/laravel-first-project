@@ -6,13 +6,10 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function index()
+    public function index($name)
     {
-        return view('welcome');
-    }
+        $data = $name;
 
-    public function noaccess()
-    {
-        return "You do not have access.";
+        return view('first', ['data' => $data]);
     }
 }
