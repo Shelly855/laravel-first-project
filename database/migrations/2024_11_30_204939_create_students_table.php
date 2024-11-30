@@ -9,12 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    // Creating column
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('student_name');
             $table->string('parent_name');
             $table->integer('student_id');
             $table->timestamps();
