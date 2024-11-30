@@ -2,5 +2,11 @@
 
 @section('content')
 <!--code here will be appear in the yield content section-->
-<h1>{{ $name }}</h1>
+
+@for ($i=0; $i<$num; $i++)
+
+    <h1>{{ $name }}</h1>
+
+@endfor
+
 @endsection
