@@ -2,5 +2,5 @@
 
 @section('content')
 <!--code here will be appear in the yield content section-->
-<h1>First Page</h1>
+<h1>{{ $name }}</h1>
 @endsection

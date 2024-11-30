@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 
-Route::view('/first', 'first');
+Route::view('/first', 'first')->name('first');
 
-Route::view('/about', 'about');
+Route::get('/loop-test/{num}/{name}', [TestController::class, 'loop'])->name('loop.test');
 
-Route::view('/contact', 'contact');
